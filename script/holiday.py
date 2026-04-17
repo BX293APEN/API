@@ -26,7 +26,8 @@ class GenerateHolidayAPI:
         output          = "docs/holiday.json"
     ):
         with open(output, "w", encoding="UTF-8") as f:
-            json.dump(self.holidays, f, ensure_ascii=False, indent=4)
+            json.dump(self.holidays, f, ensure_ascii=False, indent=4, sort_keys=True)
+            
 
 if __name__=="__main__":
     api = GenerateHolidayAPI()
