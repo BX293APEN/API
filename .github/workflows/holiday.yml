@@ -1,0 +1,36 @@
+name: Japan Holidays (ICS)
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  fetch-holiday-api:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      
+      - name: Install modules
+        run: pip install requests icalendar
+
+      - name: Fetch and convert ICS
+        run: |
+          mkdir -p docs
+          python3 script/holiday.py
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/holiday.json
+          git commit -m "Update holiday" || echo "No changes"
+          git push
