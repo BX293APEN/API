@@ -47,7 +47,7 @@ class GenerateHolidayAPI:
         
         first   = int(keys[0].split("-")[0])        # yyyy-mm-dd
         last    = int(keys[-1].split("-")[0])
-        for y in range(first, last+1):
+        for y in range(first+1, last):
             filtered = {
                 k: v for k, v in self.holidays.items() if k.startswith(f"{y}-")
             }
