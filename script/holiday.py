@@ -30,8 +30,6 @@ class GenerateHolidayAPI:
         os.makedirs(folder, exist_ok=True)
         with open(f"{folder}/holiday.json", "w", encoding="UTF-8") as f:
             json.dump(self.holidays, f, ensure_ascii=False, indent=4, sort_keys=True)
-    
-    
 
     def sort_key(self):
         self.holidays = dict(sorted(self.holidays.items()))
@@ -62,3 +60,4 @@ if __name__=="__main__":
     api = GenerateHolidayAPI()
     api.generate()
     api.dump()
+    api.dump_each_year()
