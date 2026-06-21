@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import requests
 from icalendar import Calendar
-import json, os
+import json, os, datetime
 
 class GenerateHolidayAPI:
     def __init__(
@@ -54,6 +54,16 @@ class GenerateHolidayAPI:
 
             with open(f"{folder}/{y}.json", "w", encoding="UTF-8") as f:
                 json.dump(filtered, f, ensure_ascii=False, indent=4, sort_keys=True)
+    
+
+    def timestamp(
+        self,
+        folder          = "docs/holiday"
+    ):
+        os.makedirs(folder, exist_ok=True)
+        with open(f"{folder}/Update.day", "w", encoding="UTF-8") as f:
+            f.write(f"{datetime.datetime.now()}")
+
 
 
 if __name__=="__main__":
@@ -61,3 +71,4 @@ if __name__=="__main__":
     api.generate()
     api.dump()
     api.dump_each_year()
+    api.timestamp()
