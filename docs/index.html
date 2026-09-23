@@ -64,13 +64,16 @@
             </main>
         </div>
     </body>
-    <footer class="container border-top" id="footer-contents"> <!-- FOOTER -->
+    <footer class="container border-top"> <!-- FOOTER -->
+        <div id="pagination"></div>
+        <div id="footer-contents"></div>
         <script src="/view/bootstrap.bundle.min.js"></script>
         <script src="/view/search.js"></script>
         <script src="/view/embeddedHTML.js"></script>
         <script src="/view/highlight.min.js"></script>
         <script src="/view/activenav.js"></script>
         <script src="/view/tips/tips.js"></script>
+        <script src="/view/pagination.js"></script>
         <script>
             hljs.highlightAll();
             embedded_html("/template/styleConfig.html", "styleList");
@@ -78,6 +81,7 @@
             embedded_html("/template/footer.html", "footer-contents");
             window.addEventListener("load", active_nav("about"));
             new TipsView(tipsModel, "tips", "tips", ["githubTip", "rn4020Tip", "linuxTip", "pythonTip"]);
+            new Pagination(5, securityModel.page, "pagination");
         </script>
     </footer>
 </html>
