@@ -30,11 +30,13 @@
                                 ソフトウェア同士が機能やデータをやり取りするための取り決め<br>
                                 呼び出し側は内部実装を知らなくても、決められた形式でリクエストを送れば結果を受け取れる
                             </p>
-                            <div id="pb-4 md-api">
+                            <div class="pb-4" id="md-api">
+
 | APIの種類 | 意味 | 代表例 |
 |---|---|---|
 | ステートフルAPI | サーバー側がクライアントの状態(セッション情報・接続状態など)を保持するAPI<br>前のリクエストの内容に依存して処理が行われる<br><ul><li>リクエスト間で状態が引き継がれる</li><li>サーバー側でセッション管理が必要</li><li>スケールアウトしにくい</li></ul> | <ul><li>セッションID(Cookie)を用いたログイン後のWeb API</li><li>WebSocket</li><li>FTP</li><li>データベースのトランザクションAPI</li></ul> |
 | ステートレスAPI | サーバー側がクライアントの状態を保持しないAPI<br>各リクエストに処理に必要な情報をすべて含める<br><ul><li>各リクエストが独立して処理される</li><li>サーバー側でセッション管理が不要</li><li>スケールアウトしやすい</li></ul> | <ul><li>REST API(HTTP)</li><li>JWTなどのトークン認証を用いたWeb API</li><li>GraphQL(HTTP経由)</li></ul> |  
+
                             </div>
                             <table class="table table-striped table-bordered">
                                 <tr>
