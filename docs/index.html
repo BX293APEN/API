@@ -97,9 +97,9 @@
             embedded_html("/template/styleConfig.html", "styleList");
             embedded_html("/template/header.html", "header-contents");
             embedded_html("/template/footer.html", "footer-contents");
-            window.addEventListener("load", active_nav("about"));
+            window.addEventListener("load", active_nav("tipsIndex"));
             new TipsView(tipsModel, "tips", "tips", ["githubTip", "rn4020Tip", "linuxTip", "pythonTip"]);
-            new Pagination(5, securityModel.page, "pagination");
+            new Pagination(4, securityModel.page, "pagination");
             const mdLists = [
                 "md-api", 
             ];
