@@ -22,8 +22,8 @@
             <main>
                 <div class="row g-5">
                     <div class="col-md-8">
-                        <article class="blog-post">
-                            <h2 class="pt-4 mt-4 border-bottom fw-bold">
+                        <article class="blog-post" id="article_top">
+                            <h2 class="pt-4 mt-4 border-bottom fw-bold" id="api">
                                 API (Application Programming Interface)
                             </h2>
                             <p>
@@ -69,10 +69,33 @@
                             
 
                         </article>
+                        <article class="blog-post">
+                            <h2 class="pt-4 mt-4 border-bottom fw-bold" id="webhook">
+                                Webhook (逆向きのAPI / イベント駆動型のHTTPコールバック)
+                            </h2>
+                            <p>
+                                &emsp;あるサービスで特定のイベント(メールの受信、決済の完了、コードのプッシュなど)が起きた時に、あらかじめ登録しておいたURLへHTTPリクエスト(多くはPOST)を自動で送信する仕組み<br>
+                                &emsp;受け取る側が定期的に「更新はないか」と問い合わせる(ポーリング)必要がなく、イベント発生の直後にリアルタイムでデータを受け取れるため、通信量を抑えつつ素早く連携できる
+                            </p>
+                        </article>
                     
                     </div>
                     <div class="col-md-4">
                         <div class="position-sticky" style="top: 2rem;">
+                            <div class="p-4">
+                                <h4 class="fst-italic border-bottom">Table of Contents</h4>
+                                <ol class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#article_top">Top</a>
+                                    </li>
+                                    <li>
+                                        <a href="#api">API</a>
+                                    </li>
+                                    <li>
+                                        <a href="#webhook">Webhook</a>
+                                    </li>
+                                </ol>
+                            </div>
                             <div id="tips"></div>
                         </div>
                     </div>
